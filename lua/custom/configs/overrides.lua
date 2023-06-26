@@ -45,6 +45,7 @@ M.nvimtree = {
 
   view = {
     side = "right",
+    preserve_window_proportions = true,
   },
 
   renderer = {
