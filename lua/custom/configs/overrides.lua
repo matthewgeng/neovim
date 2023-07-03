@@ -5,15 +5,16 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
-    "tsx",
-    "c",
+    -- "html",
+    -- "css",
+    -- "javascript",
+    -- "typescript",
+    -- "tsx",
+    -- "c",
     "markdown",
     "markdown_inline",
     "go",
+    "python",
   },
   indent = {
     enable = true,
@@ -31,9 +32,12 @@ M.mason = {
 
     -- golang
     "gopls",
+    "golines",
+    "goimports",
 
     -- python
-    -- pyright
+    "pyright",
+    "black",
   },
 }
 
