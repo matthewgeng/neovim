@@ -1,4 +1,3 @@
-local cmp = require "cmp"
 local M = {}
 
 M.treesitter = {
@@ -62,17 +61,25 @@ M.nvimtree = {
   },
 }
 
-M.cmp = {
-  preselect = cmp.PreselectMode.None,
-  completion = {
-    completeopt = "menu,menuone,noselect,preview",
-  },
-  mapping = {
-    ["<CR>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Insert,
-      select = false,
+-- Prevent error during the initial Lazy bootstrap:
+--   Error detected while processing ~/.config/nvim/init.lua:
+--   Failed to load `custom.plugins`
+--   ~/.config/nvim/lua/custom/plugins.lua:1: loop or previous error loading module 'custom.configs.overrides'
+local cmp_ok, cmp = pcall(require, "cmp")
+
+if cmp_ok then
+    M.cmp = {
+    preselect = cmp.PreselectMode.None,
+    completion = {
+        completeopt = "menu,menuone,noselect,preview",
     },
-  },
-}
+    mapping = {
+        ["<CR>"] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = false,
+        },
+    },
+    }
+end
 
 return M
