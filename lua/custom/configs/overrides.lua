@@ -1,5 +1,5 @@
-local M = {}
 local cmp = require "cmp"
+local M = {}
 
 M.treesitter = {
   ensure_installed = {
