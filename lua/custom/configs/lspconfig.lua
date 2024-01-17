@@ -14,6 +14,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- go
+
 -- Custom language setups
 lspconfig.gopls.setup {
   on_attach = on_attach,
@@ -31,6 +33,7 @@ lspconfig.gopls.setup {
   },
 }
 
+-- python
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -45,6 +48,25 @@ lspconfig.pyright.setup {
         diagnosticMode = "workspace",
         useLibraryCodeForTypes = true,
       },
+    },
+  },
+}
+
+
+-- rust
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "rustup", "run", "stable", "rust-analyzer",
+  },
+  filetypes = { "rust" },
+  root_dir = util.root_pattern("Cargo.toml"),
+  settings = {
+    ['rust-analyzer'] = {
+        cargo = {
+            allFeatures = true,
+        },
     },
   },
 }
