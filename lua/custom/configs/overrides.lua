@@ -42,10 +42,6 @@ M.mason = {
     -- c
     "clangd",
     "clang-format",
-
-    -- rust
-    "rust-analyzer",
-    
   },
 }
 

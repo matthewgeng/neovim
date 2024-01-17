@@ -51,22 +51,3 @@ lspconfig.pyright.setup {
     },
   },
 }
-
-
--- rust
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "rustup", "run", "stable", "rust-analyzer",
-  },
-  filetypes = { "rust" },
-  root_dir = util.root_pattern("Cargo.toml"),
-  settings = {
-    ['rust-analyzer'] = {
-        cargo = {
-            allFeatures = true,
-        },
-    },
-  },
-}

@@ -28,7 +28,7 @@ local sources = {
   b.formatting.clang_format,
 
   -- rust
-  b.formatting.rustfmt,
+  -- TODO
 }
 
 null_ls.setup {
